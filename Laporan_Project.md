@@ -80,3 +80,24 @@ Aplikasi menggunakan **Google Firebase Firestore** sebagai basis data utama. Fir
 
 #### Mekanisme Fallback:
 Repositori dilengkapi dengan **In-Memory Mock Database**. Jika Firestore tidak tersedia, aplikasi akan memuat data awal (*seeded data*) agar fungsionalitas UI tetap dapat diuji dalam lingkungan pengembangan.
+
+### 3.5.3 Session/Login State
+
+Manajemen sesi pengguna dalam aplikasi diimplementasikan untuk memastikan pengalaman pengguna yang mulus tanpa perlu login berulang kali (*persistent login*).
+
+*   **Penyimpanan Kredensial**: Aplikasi menggunakan **`SharedPreferences`** (`kerjain_prefs`) untuk menyimpan identitas pengguna yang berhasil login secara lokal (menggunakan field `saved_email`).
+*   **Persistent Session**: Pada saat `MainActivity` dimulai, aplikasi memanggil fungsi `loadSession()` pada `KerjainRepository`. Fungsi ini akan memeriksa apakah ada email yang tersimpan, jika ada, aplikasi akan otomatis memvalidasi ke Firestore/Mock data dan memulihkan objek `currentUser`.
+*   **State Management**: `KerjainRepository` menyimpan objek `currentUser` di memori selama aplikasi berjalan. Seluruh komponen UI merujuk ke objek ini untuk menentukan akses fitur dan data yang relevan.
+*   **Logout Mechanism**: Fungsi `logout()` akan menghapus data email dari `SharedPreferences` dan mengosongkan objek `currentUser`, sehingga pengguna akan diarahkan kembali ke halaman login.
+
+### 3.5.4 API/Firebase
+
+Aplikasi KerjainAplikasi mengandalkan ekosistem **Google Firebase** sebagai pengganti API backend tradisional, yang memungkinkan sinkronisasi data secara *real-time* dan manajemen infrastruktur yang efisien.
+
+*   **Firebase Cloud Firestore**: Digunakan sebagai database NoSQL utama. Implementasi mencakup penggunaan:
+    *   **Queries**: Pengambilan data terfilter (misal: `whereEqualTo("role", "pelajar")`).
+    *   **Listeners**: Penggunaan `addSnapshotListener` yang memungkinkan aplikasi menerima pembaruan data secara otomatis tanpa *request* ulang (misal: notifikasi baru atau perubahan status tugas).
+    *   **Batch Writes**: Digunakan untuk menyimpan beberapa dokumen sekaligus (seperti Program dan daftar Tasks-nya) untuk menjamin integritas data (atomisitas).
+*   **Firebase Authentication** (Conceptual Integration): Meskipun aplikasi saat ini menggunakan manajemen profil kustom di Firestore untuk mendukung mode *Mock Data*, infrastruktur telah disiapkan untuk beralih sepenuhnya ke Firebase Auth guna meningkatkan keamanan enkripsi kata sandi.
+*   **Firebase Storage**: Digunakan untuk mengelola penyimpanan file biner seperti foto profil pengguna dan file tugas yang diunggah oleh pelajar.
+*   **Offline Persistence**: Firebase Firestore dikonfigurasi untuk menyimpan *cache* data lokal secara otomatis, sehingga pengguna tetap dapat melihat data yang sebelumnya telah dimuat meskipun koneksi internet terputus.
