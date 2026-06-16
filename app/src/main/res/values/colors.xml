@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Design System Colors - Modern Premium Palette -->
+    <color name="colorPrimary">#4F46E5</color>
+    <color name="colorPrimaryDark">#3730A3</color>
+    <color name="colorPrimaryLight">#E0E7FF</color>
+    <color name="colorAccent">#F43F5E</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorTextPrimary">#0F172A</color>
+    <color name="colorTextSecondary">#64748B</color>
+    <color name="colorTextHint">#94A3B8</color>
+
+    <!-- Gradient Colors -->
+    <color name="purple_start">#4F46E5</color>
+    <color name="purple_end">#9333EA</color>
+    <color name="orange_start">#F59E0B</color>
+    <color name="orange_end">#FB923C</color>
+    <color name="green_start">#10B981</color>
+    <color name="green_end">#34D399</color>
+
+    <!-- Elevation & Borders -->
+    <color name="colorBorder">#F1F5F9</color>
+    <color name="colorDivider">#F8FAFC</color>
+    
+    <!-- Semantic Colors -->
+    <color name="colorSuccess">#2ECC71</color>
+    <color name="colorWarning">#F1C40F</color>
+    <color name="colorDanger">#E74C3C</color>
+    <color name="colorInfo">#3498DB</color>
+</resources>

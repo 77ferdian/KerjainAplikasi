@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progres Belajar 🚀"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Program Selector -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/colorBorder"
+                app:cardBackgroundColor="@color/white">
+
+                <Spinner
+                    android:id="@+id/spinner_active_programs"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:paddingHorizontal="16dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Progress Summary Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_progress_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gradient_purple"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/tv_progress_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Keseluruhan Progres"
+                        android:textColor="#E0E7FF"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_progress_percent_large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:textSize="44sp"
+                        android:fontFamily="sans-serif-black"
+                        app:layout_constraintTop_toBottomOf="@id/tv_progress_label"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_task_count_summary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 dari 0 tugas selesai"
+                        android:textColor="#E0E7FF"
+                        android:textSize="13sp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_progress_percent_large"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_view_certificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Lihat Sertifikat ✨"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone"
+                        app:backgroundTint="@color/white"
+                        app:cornerRadius="12dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_task_count_summary"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/circular_progress"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:progress="0"
+                        app:trackThickness="8dp"
+                        app:indicatorSize="80dp"
+                        app:trackColor="#40FFFFFF"
+                        app:indicatorColor="@color/white"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Task List Section -->
+            <TextView
+                android:id="@+id/tv_tasks_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Modul &amp; Tugas"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_progress_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_task" />
+
+            <!-- No Progress State -->
+            <LinearLayout
+                android:id="@+id/layout_no_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="40dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="@color/colorDivider" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum Ada Program"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ayo mulai daftar program magang pertamamu!"
+                    android:textColor="@color/colorTextSecondary"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- Close button at top-right or just title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail Talenta Pelajar"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Avatar Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/colorPrimary">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_talent_detail_initial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="B"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:background="#EFEDFF" />
+                <ImageView
+                    android:id="@+id/iv_talent_detail_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Student Name -->
+        <TextView
+            android:id="@+id/tv_talent_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Budi Santoso"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- School info -->
+        <TextView
+            android:id="@+id/tv_talent_detail_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Universitas Indonesia • Teknik Informatika"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Year / Angkatan -->
+        <TextView
+            android:id="@+id/tv_talent_detail_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Angkatan 2023"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Points badge -->
+        <TextView
+            android:id="@+id/tv_talent_detail_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Biography -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Biografi"
+            android:textColor="@color/colorTextPrimary"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/tv_talent_detail_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mahasiswa semester 6 yang antusias dengan mobile app development."
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="13sp"
+            android:layout_marginBottom="16dp"
+            android:gravity="start" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Certificates list title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sertifikat yang Diraih"
+            android:textColor="@color/colorTextPrimary"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:gravity="start" />
+
+        <!-- Certificates list container / RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_talent_detail_certificates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_talent_detail_empty_certificates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belum memiliki sertifikat."
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Program yang Diikuti"
+            android:textColor="@color/colorTextPrimary"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:gravity="start" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_talent_enrolled_programs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_talent_detail_empty_programs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belum mengikuti program apa pun."
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Monitoring Section for Mentors -->
+        <LinearLayout
+            android:id="@+id/layout_mentor_monitoring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Monitoring Tugas (Internal)"
+                android:textColor="@color/colorTextPrimary"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"
+                android:gravity="start" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_mentor_monitoring_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- Close button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_talent_detail_close"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Tutup"
+            app:cornerRadius="6dp"
+            android:backgroundTint="@color/colorPrimary" />
+
+    </LinearLayout>
+</ScrollView>
