@@ -1,69 +1,117 @@
-# KerjainAplikasi 🚀
-**Empowering Students, Mentors, and Partners in One Integrated Ecosystem.**
+# KerjainAplikasi
 
-## 📝 Deskripsi Proyek
-**KerjainAplikasi** adalah platform mobile berbasis Android yang dirancang secara profesional untuk menjembatani kesenjangan antara dunia pendidikan dan industri. Aplikasi ini menyediakan ekosistem terintegrasi yang memungkinkan **Pelajar** untuk mengembangkan hardskill melalui program magang, **Mentor** untuk memberikan bimbingan teknis yang terukur, dan **Mitra Industri** untuk mengelola program pelatihan serta menemukan bakat terbaik secara efisien.
+KerjainAplikasi adalah platform Android yang menghubungkan mahasiswa, mentor, dan mitra industri dalam satu ekosistem pembelajaran, penilaian, dan rekrutmen berbasis kinerja. Aplikasi ini dirancang untuk mendukung proses belajar, evaluasi tugas, serta pengelolaan program magang dan pelatihan secara lebih terstruktur dan transparan.
 
-Dengan mengusung transparansi dan kemudahan akses, KerjainAplikasi hadir sebagai solusi modern dalam manajemen tugas, pemantauan progres belajar, dan rekrutmen berbasis performa.
+## Gambaran Umum
 
----
+Aplikasi ini dibuat untuk menjembatani kebutuhan tiga pihak utama:
 
-## 👥 Peran & Fitur Utama
+- Mahasiswa dapat mengeksplorasi program, mengirim tugas, memantau progres belajar, dan memperoleh sertifikat digital.
+- Mentor dapat menilai tugas, memantau perkembangan peserta, dan memberikan umpan balik yang konstruktif.
+- Mitra industri dapat mengelola program, menyeleksi kandidat, dan memantau efektivitas program yang dijalankan.
 
-### 👨‍🎓 Pelajar (Student)
-*   **Eksplorasi Program**: Menemukan berbagai program magang dan pelatihan dari mitra industri ternama.
-*   **Monitoring Progres**: Dashboard visual untuk melacak status tugas dan pencapaian kompetensi secara real-time.
-*   **Submit Tugas & Portofolio**: Pengiriman hasil kerja langsung melalui aplikasi untuk mendapatkan feedback.
-*   **Sertifikat Digital**: Mendapatkan pengakuan resmi setelah menyelesaikan seluruh modul program.
+## Fitur Utama
 
-### 👨‍🏫 Mentor
-*   **Dashboard Penilaian**: Antarmuka terpusat untuk meninjau, menilai, dan memberikan feedback pada tugas pelajar.
-*   **Monitoring Pelajar Aktif**: Memantau perkembangan belajar pelajar di bawah bimbingannya secara mendalam.
-*   **Sistem Feedback**: Memberikan masukan konstruktif untuk mempercepat proses pembelajaran pelajar.
+### Mahasiswa
+- Eksplorasi program magang dan pelatihan
+- Pelacakan progres belajar dan pencapaian tugas
+- Pengiriman tugas dan portofolio
+- Penerimaan sertifikat digital setelah menyelesaikan program
 
-### 🏢 Mitra (Partner)
-*   **Manajemen Program**: Membuat, mengelola, dan mempublikasikan program magang atau pelatihan kerja.
-*   **Talent Pool**: Akses ke database pelajar terbaik yang difilter berdasarkan performa pengerjaan tugas dan keahlian.
-*   **Analitik Program**: Memantau efektivitas program yang sedang berjalan melalui data statistik pendaftar.
+### Mentor
+- Dashboard penilaian tugas
+- Monitoring perkembangan peserta
+- Sistem pemberian feedback yang terstruktur
 
----
+### Mitra
+- Manajemen program dan pendaftaran
+- Akses ke talent pool berbasis performa
+- Analisis efektivitas program secara lebih objektif
 
-## 🛠️ Teknologi & Arsitektur
-Aplikasi ini dibangun dengan standar pengembangan Android modern untuk menjamin performa, keamanan, dan skalabilitas:
+## Tech Stack
 
-*   **Bahasa Pemrograman**: Kotlin (100%)
-*   **Arsitektur**: MVVM (Model-View-ViewModel) + Repository Pattern.
-*   **Database & Backend**: 
-    *   **Cloud Firestore**: Database NoSQL real-time untuk penyimpanan data yang responsif.
-    *   **Firebase Authentication**: Sistem keamanan login dan registrasi pengguna.
-    *   **Firebase Storage**: Penyimpanan aset gambar dan dokumen tugas.
-*   **UI Framework**: Material Design 3 (M3) untuk antarmuka yang modern, bersih, dan intuitif.
-*   **Library Pendukung**: Jetpack Navigation, Coroutines, Flow, dan Lifecycle components.
+- Android
+- Kotlin
+- Jetpack Components
+- Material Design 3
+- Firebase Authentication
+- Cloud Firestore
+- Firebase Storage
+- MVVM Architecture
+- Repository Pattern
+- Gradle
 
----
+## Arsitektur dan Teknologi
 
-## 🏗️ Cara Menjalankan Project (Local Setup)
-1.  **Clone Repository**
-    ```bash
-    git clone https://github.com/77ferdian/KerjainAplikasi.git
-    ```
-2.  **Konfigurasi Firebase**
-    *   Masukkan file `google-services.json` milik Anda ke folder `/app`.
-    *   Pastikan layanan Firestore dan Authentication sudah aktif di Firebase Console.
-3.  **Build Project**
-    *   Buka di Android Studio (versi Ladybug atau terbaru).
-    *   Tunggu proses Gradle Sync selesai dan jalankan di emulator/perangkat fisik.
+Aplikasi ini dibangun dengan pendekatan modern untuk memastikan performa, keamanan, dan kemudahan pengembangan:
 
----
+- Bahasa pemrograman: Kotlin
+- Arsitektur: MVVM + Repository Pattern
+- Database: Cloud Firestore
+- Autentikasi: Firebase Authentication
+- Penyimpanan file: Firebase Storage
+- UI: Material Design 3
+- Komponen pendukung: Lifecycle, Coroutines, Flow, Navigation
 
-## 👨‍💻 Tim Pengembang
-Aplikasi ini dikembangkan dengan dedikasi penuh oleh:
+## Struktur Proyek
+
+```text
+KerjainAplikasi/
+├── app/
+│   ├── src/
+│   ├── build.gradle.kts
+│   └── proguard-rules.pro
+├── gradle/
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradlew
+├── gradlew.bat
+├── gradle.properties
+├── .gitignore
+└── README.md
+```
+
+## Persyaratan
+
+- Android Studio terbaru
+- JDK 11 atau lebih tinggi
+- Emulator atau perangkat Android fisik
+- Akun Firebase aktif
+
+## Cara Menjalankan
+
+1. Clone repository ini:
+
+```bash
+git clone https://github.com/77ferdian/KerjainAplikasi.git
+```
+
+2. Masuk ke direktori proyek:
+
+```bash
+cd KerjainAplikasi
+```
+
+3. Tambahkan file konfigurasi Firebase:
+   - Salin file `google-services.json` ke folder `app/`
+   - Pastikan Firebase Authentication, Firestore, dan Storage sudah aktif di Firebase Console
+
+4. Buka proyek di Android Studio.
+
+5. Sinkronkan Gradle dan jalankan aplikasi di emulator atau perangkat Android.
+
+## Kontribusi
+
+Kontribusi sangat terbuka untuk pengembangan lebih lanjut, termasuk perbaikan bug, peningkatan UI/UX, optimasi performa, dan pengembangan fitur baru. Silakan fork repository ini lalu buat pull request dengan deskripsi yang jelas.
+
+## Tim Pengembang
 
 | Nama | NPM | Peran |
-| :--- | :--- | :--- |
-| **Agil Adiwidya Nurfadillah** | 24082010199 | Developer |
-| **Asti Sofiana Anastasia** | 24082010207 | Developer |
-| **Ferdian** | 24082010213 | Developer |
+| --- | --- | --- |
+| Agil Adiwidya Nurfadillah | 24082010199 | Developer |
+| Asti Sofiana Anastasia | 24082010207 | Developer |
+| Ferdian | 24082010213 | Developer |
 
----
-*Proyek ini dikembangkan sebagai bagian dari inisiatif peningkatan kolaborasi antara akademisi dan industri.*
+## Status Proyek
+
+Proyek ini dikembangkan sebagai bagian dari upaya penguatan kolaborasi antara dunia pendidikan dan industri dalam menciptakan ekosistem pembelajaran yang lebih relevan dan aplikatif.
