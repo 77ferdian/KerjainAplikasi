@@ -1,32 +1,42 @@
 # KerjainAplikasi
 
-KerjainAplikasi adalah platform Android yang menghubungkan mahasiswa, mentor, dan mitra industri dalam satu ekosistem pembelajaran, penilaian, dan rekrutmen berbasis kinerja. Aplikasi ini dirancang untuk mendukung proses belajar, evaluasi tugas, serta pengelolaan program magang dan pelatihan secara lebih terstruktur dan transparan.
+KerjainAplikasi is an Android-based platform designed to connect students, mentors, and industry partners in a single integrated ecosystem. The application supports learning processes, assignment management, skill development, and internship program coordination in a more structured and transparent way.
 
-## Gambaran Umum
+<p align="left">
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android" alt="Android" />
+  <img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin" alt="Kotlin" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase" alt="Firebase" />
+  <img src="https://img.shields.io/badge/Firestore-FFCA28?style=for-the-badge&logo=google-cloud" alt="Firestore" />
+  <img src="https://img.shields.io/badge/Material%20Design-757575?style=for-the-badge&logo=material-design" alt="Material Design" />
+  <img src="https://img.shields.io/badge/Architecture-MVVM-4ECDC4?style=for-the-badge" alt="MVVM" />
+  <img src="https://img.shields.io/badge/Build-Gradle-02303A?style=for-the-badge&logo=gradle" alt="Gradle" />
+</p>
 
-Aplikasi ini dibuat untuk menjembatani kebutuhan tiga pihak utama:
+## Overview
 
-- Mahasiswa dapat mengeksplorasi program, mengirim tugas, memantau progres belajar, dan memperoleh sertifikat digital.
-- Mentor dapat menilai tugas, memantau perkembangan peserta, dan memberikan umpan balik yang konstruktif.
-- Mitra industri dapat mengelola program, menyeleksi kandidat, dan memantau efektivitas program yang dijalankan.
+KerjainAplikasi was developed to bridge the gap between education and industry by providing a digital ecosystem for:
 
-## Fitur Utama
+- Students to explore programs, submit assignments, track learning progress, and receive digital certificates.
+- Mentors to assess student work, monitor active learners, and provide structured feedback.
+- Industry partners to manage programs, evaluate candidates, and monitor the effectiveness of their initiatives.
 
-### Mahasiswa
-- Eksplorasi program magang dan pelatihan
-- Pelacakan progres belajar dan pencapaian tugas
-- Pengiriman tugas dan portofolio
-- Penerimaan sertifikat digital setelah menyelesaikan program
+## Roles and Features
+
+### Student
+- Explore internship and training programs
+- Track learning progress and task completion
+- Submit assignments and portfolio work
+- Receive digital certificates after completing a program
 
 ### Mentor
-- Dashboard penilaian tugas
-- Monitoring perkembangan peserta
-- Sistem pemberian feedback yang terstruktur
+- Review and assess student submissions
+- Monitor participant development in real time
+- Provide structured and constructive feedback
 
-### Mitra
-- Manajemen program dan pendaftaran
-- Akses ke talent pool berbasis performa
-- Analisis efektivitas program secara lebih objektif
+### Partner
+- Manage and publish internship or training programs
+- Access a talent pool filtered by student performance and skills
+- Analyze program performance and participation data
 
 ## Tech Stack
 
@@ -41,19 +51,19 @@ Aplikasi ini dibuat untuk menjembatani kebutuhan tiga pihak utama:
 - Repository Pattern
 - Gradle
 
-## Arsitektur dan Teknologi
+## Technology and Architecture
 
-Aplikasi ini dibangun dengan pendekatan modern untuk memastikan performa, keamanan, dan kemudahan pengembangan:
+The application is built using a modern Android development approach to ensure scalability, maintainability, and strong performance:
 
-- Bahasa pemrograman: Kotlin
-- Arsitektur: MVVM + Repository Pattern
+- Programming language: Kotlin
+- Architecture: MVVM + Repository Pattern
 - Database: Cloud Firestore
-- Autentikasi: Firebase Authentication
-- Penyimpanan file: Firebase Storage
-- UI: Material Design 3
-- Komponen pendukung: Lifecycle, Coroutines, Flow, Navigation
+- Authentication: Firebase Authentication
+- File storage: Firebase Storage
+- User interface: Material Design 3
+- Supporting libraries: Lifecycle, Coroutines, Flow, Navigation
 
-## Struktur Proyek
+## Project Structure
 
 ```text
 KerjainAplikasi/
@@ -68,50 +78,53 @@ KerjainAplikasi/
 ├── gradlew.bat
 ├── gradle.properties
 ├── .gitignore
-└── README.md
+├── README.md
+└── .idea/
 ```
 
-## Persyaratan
+## Requirements
 
-- Android Studio terbaru
-- JDK 11 atau lebih tinggi
-- Emulator atau perangkat Android fisik
-- Akun Firebase aktif
+- Latest Android Studio
+- JDK 11 or higher
+- Android emulator or physical device
+- Active Firebase account
 
-## Cara Menjalankan
+## Getting Started
 
-1. Clone repository ini:
+1. Clone the repository
 
 ```bash
 git clone https://github.com/77ferdian/KerjainAplikasi.git
 ```
 
-2. Masuk ke direktori proyek:
+2. Open the project in Android Studio
+
+3. Add your Firebase configuration file
+
+Place the `google-services.json` file inside the `app/` directory.
+
+4. Enable required Firebase services
+
+Make sure Firebase Authentication, Firestore, and Storage are enabled in the Firebase Console.
+
+5. Sync Gradle and run the application
 
 ```bash
-cd KerjainAplikasi
+./gradlew build
 ```
 
-3. Tambahkan file konfigurasi Firebase:
-   - Salin file `google-services.json` ke folder `app/`
-   - Pastikan Firebase Authentication, Firestore, dan Storage sudah aktif di Firebase Console
+## Contributing
 
-4. Buka proyek di Android Studio.
+Contributions are welcome for improvements such as bug fixes, UI enhancement, performance optimization, and new feature development. Please fork the repository and submit a pull request with a clear description of the changes.
 
-5. Sinkronkan Gradle dan jalankan aplikasi di emulator atau perangkat Android.
+## Developer Team
 
-## Kontribusi
-
-Kontribusi sangat terbuka untuk pengembangan lebih lanjut, termasuk perbaikan bug, peningkatan UI/UX, optimasi performa, dan pengembangan fitur baru. Silakan fork repository ini lalu buat pull request dengan deskripsi yang jelas.
-
-## Tim Pengembang
-
-| Nama | NPM | Peran |
+| Name | NPM | Role |
 | --- | --- | --- |
 | Agil Adiwidya Nurfadillah | 24082010199 | Developer |
 | Asti Sofiana Anastasia | 24082010207 | Developer |
 | Ferdian | 24082010213 | Developer |
 
-## Status Proyek
+## Project Status
 
-Proyek ini dikembangkan sebagai bagian dari upaya penguatan kolaborasi antara dunia pendidikan dan industri dalam menciptakan ekosistem pembelajaran yang lebih relevan dan aplikatif.
+This project is developed as part of an initiative to strengthen the collaboration between education and industry through a more relevant, practical, and technology-driven learning ecosystem.
